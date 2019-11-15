@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -d -w",
-    "start": "nodemon",
-    "dev:server": "nodemon ./server/index.js"
+    "start": "nodemon ./server/index.js",
+    "dev:server": "nodemon ./server/index.js",
+    "seed": "node ./database/seed.js"
   },
   "author": "Morgan Lin",
   "license": "ISC",

@@ -1,9 +1,10 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const morgan = require('morgan');
-const path = require('path');
-const router = require('./router.js');
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const morgan = require("morgan");
+const path = require("path");
+const router = require("./router.js");
+const db = require("../database/index.js");
 
 const app = express();
 const PORT = 3000;
@@ -20,8 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.urlencoded({ extended: true }));
 
 // outputs HTTP requests to console
-app.use(morgan('dev'));
-
-app.use('/', router);
+app.use(morgan("dev"));
+// routes urls
+app.use("/", router);
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
